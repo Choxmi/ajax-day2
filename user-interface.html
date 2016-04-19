@@ -10,54 +10,54 @@ body {padding-top: 40px; padding-left: 25%}
 li {list-style: none; margin:5px 0 5px 0; color:#FF0000}
 </style>
 </head>
-
 <body>
-<form name="ajax-demo" id="ajax-demo">
-<div>
-              <label for="book">Book</label>
-              <div>
+<form class="well-home span6 form-horizontal" name="ajax-demo" id="ajax-demo">
+<div class="control-group">
+              <label class="control-label" for="book">Book</label>
+              <div class="controls">
                 <input type="text" id="book" onKeyUp="book_suggestion()">
 				<div id="suggestion"></div>
 			 </div>
  </div>
- <div>
-              <div>
-                <button type="submit">Submit</button>
+ <div class="control-group">
+              <div class="controls">
+                <button type="submit" class="btn btn-success">Submit</button>
               </div>
  </div>
 </form>
+
+
 <script>
-	function book_suggestion(){
-		var book=document.getElementById("book").value;		
-		var xhr;
-		if(window.XMLHttpRequest()){
-			xhr = new XMLHttpRequest();
-		}
-		else if(window.ActiveXObject){
-			xhr = new ActiveXObject("Microsoft.XMLHttp");
-		}
-		
-		var data = "book_name"+book;
-		
-		xhr.open("POST","book-suggestion.php",true);
-		xhr.setRequestHeader("contact type","application/x-www-form-urlencoded");
-		xhr.send(data);
-		
-		//Process data and render it to user
-		xhr.onreadystatechange =display_data;
-		
-		function display_data(){
-			if(xhr.readyState == 4){
-				if(xhr.status == 200){
-					document.getElementById("suggestion").innerHTML = xhr.responseText;
-				}else{
-					alert("Error occured");
-				}
-			}
-		}
+
+function book_suggestion()
+{
+// create xmlrequest obj and send hhtp request with user data
+var book = document.getElementById("book").value;
+var xhr;
+ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    xhr = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE 8 and older
+    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+var data = "book_name=" + book;
+     xhr.open("POST", "book-suggestion.php", true); 
+     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                  
+     xhr.send(data);
+	 
+// process return data and update page	 
+	 xhr.onreadystatechange = display_data;
+	function display_data() {
+	 if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+       //alert(xhr.responseText);	   
+	  document.getElementById("suggestion").innerHTML = xhr.responseText;
+      } else {
+        alert('There was a problem with the request.');
+      }
+     }
 	}
+}
 </script>
 </body>
-
 </html>
 
