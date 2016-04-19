@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8"> 
+<title>User interface for Ajax, PHP, MySQL demo</title> 
+<meta name="description" content="HTML code for user interface for Ajax, PHP and MySQL demo."> 
+<link href="../includes/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+body {padding-top: 40px; padding-left: 25%}
+li {list-style: none; margin:5px 0 5px 0; color:#FF0000}
+</style>
+</head>
+
+<body>
+<form name="ajax-demo" id="ajax-demo">
+<div>
+              <label for="book">Book</label>
+              <div>
+                <input type="text" id="book" onKeyUp="book_suggestion()">
+				<div id="suggestion"></div>
+			 </div>
+ </div>
+ <div>
+              <div>
+                <button type="submit">Submit</button>
+              </div>
+ </div>
+</form>
+<script>
+	function book_suggestion(){
+		var book=document.getElementById("book").value;		
+		var xhr;
+		if(window.XMLHttpRequest()){
+			xhr = new XMLHttpRequest();
+		}
+		else if(window.ActiveXObject){
+			xhr = new ActiveXObject("Microsoft.XMLHttp");
+		}
+		
+		var data = "book_name"+book;
+		
+		xhr.open("POST","book-suggestion.php",true);
+		xhr.setRequestHeader("contact type","application/x-www-form-urlencoded");
+		xhr.send(data);
+		
+		//Process data and render it to user
+		xhr.onreadystatechange =display_data;
+		
+		function display_data(){
+			if(xhr.readyState == 4){
+				if(xhr.status == 200){
+					document.getElementById("suggestion").innerHTML = xhr.responseText;
+				}else{
+					alert("Error occured");
+				}
+			}
+		}
+	}
+</script>
+</body>
+
+</html>
+
