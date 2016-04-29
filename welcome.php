@@ -1,0 +1,5 @@
+<div style="width:500px;height:700px;border:3px solid yellowgreen;">
+	<div style="width:500px;height:100px;background-color:pink;">
+	<img src="https://lh3.googleusercontent.com/C7K_3lEz31gm-bbOOlwwlPLlzR7E_Ok2kAjuS_bC-B-0k8jbqO9GqnmrMqftN5xCitzpj22SyShbXNTcIsgwsYOlAtKLHHcrXeS5-3DnjrXWI9IOQxbfOxvUOYWdPDS5e8anrYrX314wCuScIdWI9R1aT9PkpTmnyd8jTnPhFGC-X9NpwR-iyURnikqhUdQuaK2CRr27HCQGzdEjG4Mt11aU7KPRL0glRsEoYv3Mqtd25VIXIdCJctjZ1eaUewes2jth0BIBVqxalM265eBiyfja5b1oGTsPyISSfJxtlyjYuQa5rPdSFUXi9EQWeSILsZ6ru-V-BGww1NGknUlSdI4hiWtYhi11qijjb4G0Cl8Y3w5EjXS33Vp7u6obJ79AOAD92hriDLjiRVCQGohN6iW4Gtqc1wKPMcBehlQXc6yEmMOBKk9SfF78VIj_O8JCkibMm9ZjH9ZqzWC9T2JrykHUIaEZNZIz9HOhgT3bgXBainxvtyu-CkIDZfhMLOsshKzB-fhyH-gYizM_F4UvubGxIeJ91w-n-inxQELO5s0iVrLjCfReU5kOFk1JTGA=w627-h517-no" align="right">
+	</div>
+</div>
